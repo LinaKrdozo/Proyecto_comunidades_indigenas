@@ -1,5 +1,5 @@
 from authAppComInd.models.comunidad import Comunidad
-from authAppComInd.models.Region    import Region
+from authAppComInd.models.region    import Region
 from rest_framework                 import serializers
  
 

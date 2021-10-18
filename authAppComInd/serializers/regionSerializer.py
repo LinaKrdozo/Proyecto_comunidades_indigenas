@@ -3,7 +3,7 @@ from authAppComInd.models.comunidad                import Comunidad
 from rest_framework                                import serializers
 
 class RegionSerializer(serializers.ModelSerializer):
-    comunidad = ComunidadSerializer()
+    #comunidad = ComunidadSerializer()
     class Meta:
         model  = Region
         fields = ['nombreRegion']

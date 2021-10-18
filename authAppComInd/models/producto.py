@@ -8,4 +8,5 @@ class Producto(models.Model):
     cantidad        = models.IntegerField(default = 0)
     tipo_producto   = models.ForeignKey(Tipo_producto, related_name='producto', on_delete = models.CASCADE)
 
- 
+    def save(self, **kwargs):
+        super().save(**kwargs)

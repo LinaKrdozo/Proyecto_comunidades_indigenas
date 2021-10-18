@@ -20,4 +20,5 @@ from authAppComInd import views  as authAppViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('productGet/', authAppViews.ProductoCreateView.as_view()),
+    path('productList/', authAppViews.ProductoListView.as_view()),
 ]
