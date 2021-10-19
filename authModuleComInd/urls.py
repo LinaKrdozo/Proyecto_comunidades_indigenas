@@ -21,4 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('productGet/', authAppViews.ProductoCreateView.as_view()),
     path('productList/', authAppViews.ProductoListView.as_view()),
+    path('comunidades/', authAppViews.ComunidadCreateView.as_view()),
+    path('comunidadesList/', authAppViews.ComunidadListView.as_view()),
+    path('comunidadesYproductos/', authAppViews.Produc_comunCreateView.as_view()),
+    path('comunidadesYproductosList/', authAppViews.Produc_comunCreateView.as_view())
+    
 ]

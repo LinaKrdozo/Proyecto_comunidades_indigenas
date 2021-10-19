@@ -8,6 +8,11 @@ class Produc_comunSerializer(serializers.ModelSerializer):
         model  = Produc_comun
         fields = ['comunidad', 'producto']
     
+    def create(self, validated_data):
+        produc_comunInstance  = Produc_comun.objects.create(**validated_data)
+        return produc_comunInstance
+
+
     def to_representation(self,obj):
         comunidad    = Comunidad.objects.get(id=obj.comunidad)
         producto     = Producto.objects.get(id=obj.producto)
