@@ -19,3 +19,19 @@ class ComunidadListView(generics.ListAPIView):
     def get_queryset(self):
         queryset = Comunidad.objects.all()
         return queryset
+
+class ComunidadUpdateView(generics.UpdateAPIView):
+    serializer_class   = ComunidadSerializer
+    queryset           = Comunidad.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        return super().update(request, *args, **kwargs)
+
+
+class ComunidadDeleteView(generics.DestroyAPIView):
+    serializer_class   = ComunidadSerializer
+    queryset           = Comunidad.objects.all()
+
+    def delete(self, request, *args, **kwargs):
+        super().destroy(request, *args, **kwargs)
+        return Response("comunidad borrada", status=status.HTTP_204_NO_CONTENT)

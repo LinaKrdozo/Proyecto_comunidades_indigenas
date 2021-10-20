@@ -21,9 +21,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('productGet/', authAppViews.ProductoCreateView.as_view()),
     path('productList/', authAppViews.ProductoListView.as_view()),
+    path('productActualizar/<int:producto>/<int:pk>/', authAppViews.ProductoUpdateView.as_view()),
+    path('productBorrar/<int:producto>/<int:pk>/', authAppViews.ProductoDeleteView.as_view()),
     path('comunidades/', authAppViews.ComunidadCreateView.as_view()),
     path('comunidadesList/', authAppViews.ComunidadListView.as_view()),
+    path('comunidadesActualizar/<int:comunidad>/<int:pk>/', authAppViews.ComunidadUpdateView.as_view()),
+    path('comunidadesBorrar/<int:comunidad>/<int:pk>/', authAppViews.ComunidadDeleteView.as_view()),
     path('comunidadesYproductos/', authAppViews.Produc_comunCreateView.as_view()),
     path('comunidadesYproductosList/', authAppViews.Produc_comunCreateView.as_view())
+    
     
 ]

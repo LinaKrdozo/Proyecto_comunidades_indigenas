@@ -20,3 +20,19 @@ class ProductoListView(generics.ListAPIView):
         queryset = Producto.objects.all()
         return queryset
 
+
+class ProductoUpdateView(generics.UpdateAPIView):
+    serializer_class   = ProductoSerializer
+    queryset           = Producto.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        return super().update(request, *args, **kwargs)
+
+
+class ProductoDeleteView(generics.DestroyAPIView):
+    serializer_class   = ProductoSerializer
+    queryset           = Producto.objects.all()
+
+    def delete(self, request, *args, **kwargs):
+        super().destroy(request, *args, **kwargs)
+        return Response("producto borrado", status=status.HTTP_204_NO_CONTENT)
