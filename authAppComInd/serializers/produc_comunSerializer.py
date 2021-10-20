@@ -1,7 +1,10 @@
 from authAppComInd.models.produc_comun                import Produc_comun
 from rest_framework                                   import serializers
 from authAppComInd.models.producto                    import Producto
+from authAppComInd.serializers.productoSerializer     import ProductoSerializer
 from authAppComInd.models.comunidad                   import Comunidad
+from authAppComInd.serializers.comunidadSerializer    import ComunidadSerializer
+
 
 class Produc_comunSerializer(serializers.ModelSerializer):
     class Meta:
