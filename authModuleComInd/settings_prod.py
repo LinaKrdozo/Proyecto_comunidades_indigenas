@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from   pathlib  import Path
 from   datetime import timedelta
-import django heroku
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +28,9 @@ SECRET_KEY = 'django-insecure-+oq#ic(9vlx3nf1xyhdbvew1k8=o-77mo@6&e90^!+7p^pr2#j
 DEBUG = False
 
 ALLOWED_HOSTS = ['ec2-18-214-214-252.compute-1.amazonaws.com', 'localhost']
-
+CORS_ALLOWED_ORIGINS =[
+    "http://localhost"
+]
 
 # Application definition
 
@@ -40,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'authAppComInd'
+    'authAppComInd',
+    'corsheaders'
 ]
 
 SIMPLE_JWT = {
@@ -62,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 REST_FRAMEWORK = {
