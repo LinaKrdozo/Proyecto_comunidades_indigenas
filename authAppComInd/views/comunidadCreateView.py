@@ -24,7 +24,7 @@ class ComunidadUpdateView(generics.UpdateAPIView):
     serializer_class   = ComunidadSerializer
     queryset           = Comunidad.objects.all()
 
-    def get(self, request, *args, **kwargs):
+    def update(self, request, *args, **kwargs):
         return super().update(request, *args, **kwargs)
 
 

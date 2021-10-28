@@ -17,11 +17,11 @@ class Produc_comunSerializer(serializers.ModelSerializer):
 
 
     def to_representation(self,obj):
-        comunidad    = Comunidad.objects.get(id=obj.comunidad)
-        producto     = Producto.objects.get(id=obj.producto)
+        comunidad    = Comunidad.objects.get(produc_comun=obj.id)
+        producto     = Producto.objects.get(produc_comun=obj.id)
         produc_comun = Produc_comun.objects.get(id=obj.id)
         return{
-            'id'         : Produc_comun.id,
+            'id'         : produc_comun.id,
             'comunidad'  : {
                 'id'              : comunidad.id,
                 'nombreComunidad' : comunidad.nombreComunidad

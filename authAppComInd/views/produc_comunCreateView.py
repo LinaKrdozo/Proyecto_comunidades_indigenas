@@ -14,7 +14,7 @@ class Produc_comunCreateView(views.APIView):
         return Response("producto y comunidad creado", status=status.HTTP_201_CREATED)
 
 
-class ProductoListView(generics.ListAPIView):
+class Produc_comunListView(generics.ListAPIView):
     serializer_class = Produc_comunSerializer
     def get_queryset(self):
         queryset = Produc_comun.objects.all()
