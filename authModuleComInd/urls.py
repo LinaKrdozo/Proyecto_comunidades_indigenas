@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from authAppComInd import views  as authAppViews
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('productGet/', authAppViews.ProductoCreateView.as_view()),
